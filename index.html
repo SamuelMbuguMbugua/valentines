@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    max-width: 600px;
+    animation: fadeIn 2s ease;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.buttons {
+    margin-top: 40px;
+}
+
+button {
+    padding: 14px 35px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.3s ease;
+}
+
+.yes {
+    background: white;
+    color: #302b63;
+}
+
+.yes:hover {
+    transform: scale(1.1);
+}
+
+.no {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    position: relative;
+}
+
+.no:hover {
+    transform: scale(0.9);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Hey Mamii ❤️</h1>
+    <p>Every moment with you feels intentional.  
+    And today, I want to ask you something meaningful.</p>
+
+    <h2>Will you be my Valentine?</h2>
+
+    <div class="buttons">
+        <button class="yes" onclick="showLove()">Yes 💖</button>
+        <button class="no" onclick="moveNo(this)">No</button>
+    </div>
+</div>
+
+<script>
+function showLove() {
+    document.body.innerHTML = `
+        <div style="display:flex;justify-content:center;align-items:center;height:100vh;text-align:center;background:#000;color:white;font-family:Poppins;">
+            <div>
+                <h1 style="font-size:45px;">You just made my world brighter ❤️</h1>
+                <p style="opacity:0.8;">I can't wait to make beautiful memories with you.</p>
+            </div>
+        </div>
+    `;
+}
+
+function moveNo(btn) {
+    btn.style.position = "absolute";
+    btn.style.top = Math.random() * window.innerHeight + "px";
+    btn.style.left = Math.random() * window.innerWidth + "px";
+}
+</script>
+
+</body>
+</html>
